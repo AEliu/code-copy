@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Code Block Copy Helper",
+  "version": "1.0.0",
+  "description": "Automatically adds copy buttons to code blocks on web pages",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}

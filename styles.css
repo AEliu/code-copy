@@ -1,0 +1,92 @@
+/* Code block copy button styles */
+
+.cbc-code-block {
+  position: relative !important;
+}
+
+.cbc-copy-button {
+  position: absolute !important;
+  top: 8px !important;
+  right: 8px !important;
+  width: 32px !important;
+  height: 32px !important;
+  padding: 6px !important;
+  color: #24292e !important;
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border: 1px solid rgba(27, 31, 35, 0.2) !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  z-index: 9999 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 1px 0 rgba(27, 31, 35, 0.04), 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+  user-select: none !important;
+  outline: none !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+.cbc-copy-button:hover {
+  background-color: rgba(255, 255, 255, 1) !important;
+  border-color: rgba(27, 31, 35, 0.35) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+.cbc-copy-button:active {
+  transform: translateY(0) !important;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0) !important;
+  background-color: rgba(27, 31, 35, 0.08) !important;
+}
+
+.cbc-copy-button.success {
+  color: #28a745 !important;
+  background-color: rgba(40, 167, 69, 0.1) !important;
+  border-color: rgba(40, 167, 69, 0.3) !important;
+}
+
+.cbc-copy-button.error {
+  color: #dc3545 !important;
+  background-color: rgba(220, 53, 69, 0.1) !important;
+  border-color: rgba(220, 53, 69, 0.3) !important;
+}
+
+/* SVG icon styles */
+.cbc-copy-button svg {
+  width: 16px !important;
+  height: 16px !important;
+  stroke: currentColor !important;
+  fill: none !important;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .cbc-copy-button {
+    color: #f0f6fc !important;
+    background-color: rgba(88, 88, 88, 0.7) !important;
+    border-color: rgba(240, 246, 252, 0.1) !important;
+  }
+
+  .cbc-copy-button:hover {
+    background-color: rgba(88, 88, 88, 0.9) !important;
+    border-color: rgba(240, 246, 252, 0.3) !important;
+  }
+
+  .cbc-copy-button:active {
+    background-color: rgba(110, 118, 129, 0.3) !important;
+  }
+}
+
+/* Ensure button doesn't interfere with code block content */
+pre.cbc-code-block,
+.cbc-code-block pre {
+  padding-top: 40px !important;
+}
+
+/* Handle cases where code blocks already have padding */
+pre:has(> .cbc-copy-button),
+.cbc-code-block pre {
+  position: relative;
+}
+
